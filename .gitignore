@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+*.json
+*.json
+setting.json
+*.json
+*.json
