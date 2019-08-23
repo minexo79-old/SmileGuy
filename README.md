@@ -1,4 +1,6 @@
 # SmileGuy
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
+
 我是微笑小子，這是我的主人為我編寫的程式碼。  
 icon 來源:https://www.easyicon.net/language.en/1214210-robot_face_icon.html  
 
