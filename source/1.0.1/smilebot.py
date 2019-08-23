@@ -10,6 +10,8 @@ with open('setting_interact.json',mode='r',encoding='utf8') as jfile_in: #互動
     jdata_in = json.load(jfile_in)
 with open('setting_disbot.json',mode='r',encoding='utf8') as jfile_bot: #機器人訊息
     jdata_bot = json.load(jfile_bot)
+with open('setting_chatphoto.json',mode='r',encoding='utf8') as jfile_chatphoto: #機器人訊息
+    jdata_chatphoto = json.load(jfile_chatphoto)
 
 bot = commands.Bot(command_prefix='..') #指令偵測
 
@@ -57,11 +59,11 @@ async def botping(ctx):
 
 @bot.command() #發梗圖
 async def photo(ctx):
-    random_pic = random.choice(jdata_in['chat_photo'])
-    pic = discord.File(random_pic)
-    await ctx.send(file = pic)
+    random_pic = random.choice(jdata_chatphoto['chat_photo'])
+    # pic = discord.File(random_pic)
+    await ctx.send(random_pic)
     print(bot_m,ctx.message.author,cmd_message6,random_pic) 
-    
+
 @bot.command() #HELP
 async def bothelp(ctx):
     await ctx.send(jdata_in['chat_bothelp'])

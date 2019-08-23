@@ -1,7 +1,0 @@
-{
-    "cmd_message_join" : "join in",
-    "cmd_message_leave" : "leave in",
-    "chat_message_startup" : "吾乃微笑小子，為大家服務的微笑機器人!",
-    "chat_message_join" : "，歡迎加入!",
-    "chat_bothelp" : "```diff\n+[..botping] > 查詢 ping\n+[..bothelp] > 機器人幫助\n+[..photo] > 發梗圖\n+成員進出提醒\n\n版本 v1.0.1(web)\n```"
-}
