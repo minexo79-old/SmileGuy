@@ -1,0 +1,9 @@
+{
+    "cmd_message_join" : "join in",
+    "cmd_message_leave" : "leave in",
+    "chat_message_startup" : "欸豆...www\n我是微笑小子，是為大家服務的微笑機器人!😜\n以下是我目前可用的功能：\n",
+    "chat_message_join" : "，歡迎加入!",
+    "chat_photo_add" : "```\n😜成功增加圖片!\n```",
+    "chat_photo_del" : "```\n😀成功刪除圖片!\n```",
+    "chat_bothelp" : "```diff\n+[..botping] > 查詢 ping\n+[..bothelp] > 機器人幫助\n+[..photo] > 發梗圖\n+[..addphoto] > 增加梗圖網址\n+[..delphoto] > 刪除梗圖網址\n+成員進出提醒\n+圖片刪減提醒\n\n版本 v1.0.2(web) BY minexo79\nMy Source Code:https://github.com/minexo79/SmileGuy\n```"
+}
