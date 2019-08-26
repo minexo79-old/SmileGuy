@@ -9,9 +9,7 @@ icon 來源:https://www.easyicon.net/language.en/1214210-robot_face_icon.html
 
 * 使用前先在`bot.py`填入所需資料：
 ```py
-   {
-       bot.run("在Discord Developer Portal獲取的TOKEN")
-   }
+    bot.run("在Discord Developer Portal獲取的TOKEN")
 ```
 
 * 模組裝載指令:  
