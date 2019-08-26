@@ -12,8 +12,8 @@ class message(Cog_Extension):
 
     @commands.Cog.listener() #三修
     async def on_message(self,msg):
-    	keyword = ['三修','三小','WTF','蛤']
-    	if msg.content in keyword and msg.author != self.bot.user:
+        keyword = ['三修','三小','WTF','蛤']
+        if msg.content in keyword and msg.author != self.bot.user:
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url='https://truth.bahamut.com.tw/s01/201809/19336b6cfc3198bd9c7e9bf564eb1223.JPG')
             await msg.channel.send('蛤?')
