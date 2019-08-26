@@ -20,7 +20,7 @@ icon 來源:https://www.easyicon.net/language.en/1214210-robot_face_icon.html
   * 重載: ..reload <模組>
 
 * 目前可用功能:  
-  * 發送梗圖(網址)
-  * 增加or刪除梗圖(網址)
-  * 訊息回應(ex:蛤?)
+  * 發送梗圖(網址) >> `photo`
+  * 增加or刪除梗圖(網址) >> `photo`
+  * 訊息回應(ex:蛤?) >> `message`
   * 之後陸續增加...
