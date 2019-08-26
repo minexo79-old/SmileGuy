@@ -40,7 +40,7 @@ async def on_guild_join(guild):
     embed.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
     embed.add_field(name="目前版本", value="1.1.3(20190826)", inline=True)
     embed.add_field(name="機器人作者", value="minexo79", inline=False)
-    embed.add_field(name="指令幫助", value="..help", inline=True)
+    embed.add_field(name="指令幫助", value="!help", inline=True)
     embed.set_footer(text="SmileGuy Discord Bot")
     channel = bot.get_channel(guild._system_channel_id) # 抓取預設聊天室ID
     print(bot_m,"joined at",guild.name,blue_text,time_m) #抓取伺服器名稱並且印在CLR上面
