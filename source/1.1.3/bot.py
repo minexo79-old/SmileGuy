@@ -28,7 +28,7 @@ blue_text = "in \033[34m"
 @bot.event #初始開機
 async def on_ready():
     #終端訊息
-    await bot.change_presence(status=discord.Status.idle,activity=discord.Game('SmileGuy Running! V1.1.2')) #bot狀態
+    await bot.change_presence(status=discord.Status.idle,activity=discord.Game('SmileGuy Running! V1.1.3')) #bot狀態
     os.system('cls') #windows專用
     print(cmd_message1)
     print(bot_m,time_m)
