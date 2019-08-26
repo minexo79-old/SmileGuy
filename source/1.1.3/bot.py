@@ -9,7 +9,7 @@ import datetime
 with open('setting_react.json',mode='r',encoding='utf8') as jfile_in: #互動設定檔
     jdata_in = json.load(jfile_in)
 
-bot = commands.Bot(command_prefix='..') #指令偵測
+bot = commands.Bot(command_prefix='!') #指令偵測
 bot.remove_command('help') #刪除help
 
 """時間設定"""
