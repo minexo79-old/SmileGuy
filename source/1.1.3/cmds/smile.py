@@ -2,10 +2,15 @@ import discord # 導入discord
 from discord.ext import commands,tasks
 from core.classes import Cog_Extension
 import datetime
+import json
 
 """時間設定"""
 time_stamp = datetime.datetime.now()
 time_m = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
+
+"""匯入設定檔json 建立jdata"""
+with open('setting_bot.json',mode='r',encoding='utf8') as jfile_bot: #互動設定檔
+    jdata_bot = json.load(jfile_bot)
 
 """開機訊息"""
 bot_m = '[Bot]'
@@ -28,9 +33,9 @@ class smile(Cog_Extension):
         embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=0xffd300)
         embed.set_author(name="😀😀謝謝你加我進伺服器，我是微笑小子!!😆😆")
         embed.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
-        embed.add_field(name="目前版本", value="1.1.3(20190826)", inline=True)
+        embed.add_field(name="目前版本", value=jdata_bot['Version'], inline=True)
         embed.add_field(name="機器人作者", value="minexo79", inline=False)
-        embed.add_field(name="指令幫助", value="!help", inline=True)
+        embed.add_field(name="指令幫助", value=jdata_bot['help'], inline=True)
         embed.set_footer(text="SmileGuy Discord Bot")
         await ctx.send(embed=embed) #聊天室顯示訊息
     
@@ -43,8 +48,8 @@ class smile(Cog_Extension):
         embed.add_field(name="!delphoto", value="刪除梗圖(網址)", inline=False)
         embed.add_field(name="!photolist", value="查詢現有梗圖(網址)", inline=False)
         embed.add_field(name="!help", value="可用指令查詢", inline=False)
-        embed.add_field(name="!about", value="關於此機器人", inline=False)
-        embed.add_field(name="其他功能", value="訊息回復(暫時不能用，抱歉!)", inline=True)
+        embed.add_field(name="!about", value="關於此機器人", inline=True)
+        embed.add_field(name="其他功能", value="訊息回復(ex: 蛤)", inline=True)
         embed.set_footer(text="SmileGuy Discord Bot")
         await ctx.send(embed=embed) #聊天室顯示訊息      
 

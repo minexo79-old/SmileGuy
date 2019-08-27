@@ -21,8 +21,9 @@ class photo(Cog_Extension):
         random_pic = random.choice(jdata_chatphoto['chat_photo']) #隨機選取網址
         ramdom_mes = random.choice(jdata_in['chat_photo_mes']) #隨機選取訊息
         embed = discord.Embed(color=0xffd300)
-        embed.set_author(name=ramdom_mes)
         embed.set_image(url=random_pic)
+        embed.set_footer(text=random_pic)
+        await ctx.send(ramdom_mes)
         await ctx.send(embed=embed)
 
     @commands.command() #加梗圖
