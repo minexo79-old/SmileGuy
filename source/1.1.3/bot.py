@@ -20,7 +20,7 @@ time_m = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
 
 """開機訊息"""
 bot_m = '[Bot]'
-cmd_message1 = ">> SmileGuy Running! V1.1.3(2019/08/26)"
+cmd_message1 = ">> SmileGuy Running! V1.1.3(2019/08/27)"
 
 """顏色"""
 blue_text = "in \033[34m"
