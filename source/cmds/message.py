@@ -5,11 +5,11 @@ import random
 import json
 import time
 
+"""匯入設定檔json 建立jdata"""
 with open('setting_react.json',mode='r',encoding='utf8') as jfile_in: #互動設定檔
     jdata_in = json.load(jfile_in)
 
 class message(Cog_Extension):
-
     """訊息回復"""
 
     @commands.Cog.listener()
