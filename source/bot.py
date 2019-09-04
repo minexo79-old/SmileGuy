@@ -6,8 +6,6 @@ import json
 import datetime
 
 """匯入設定檔json 建立jdata"""
-with open('setting_react.json',mode='r',encoding='utf8') as jfile_in: #互動設定檔
-    jdata_in = json.load(jfile_in)
 with open('setting_bot.json',mode='r',encoding='utf8') as jfile_bot: #機器人設定檔
     jdata_bot = json.load(jfile_bot)
 
@@ -16,7 +14,6 @@ bot.remove_command('help') #刪除help
 
 """開機訊息"""
 bot_m = '[Bot]'
-cmd_message1 = ">> SmileGuy Running! V1.2(2019/09/03)"
 
 """基本功能"""
 
@@ -28,7 +25,7 @@ async def on_ready():
     #終端訊息
     await bot.change_presence(status=discord.Status.online,activity=discord.Game(jdata_bot['Status'])) #bot狀態
     os.system('cls') #windows專用
-    print(cmd_message1)
+    print(jdata_bot['Cmd_message'])
     print(bot_m,time_m)
 
 @bot.event #錯誤的指令
@@ -45,17 +42,17 @@ for filename in os.listdir('./cmds'):
     if filename.endswith('.py'):
         bot.load_extension(f'cmds.{filename[:-3]}')
 
-# @bot.command()
-# async def load(ctx,extension): #載入模組
-#     bot.load_extension(f'cmds.{extension}')
-#     print(bot_m,f"<{extension}> load complete!")
-#     await ctx.send(f"```http\n模組 {extension} 載入成功!\n```")
+@bot.command()
+async def load(ctx,extension): #載入模組
+    bot.load_extension(f'cmds.{extension}')
+    print(bot_m,f"<{extension}> load complete!")
+    await ctx.send(f"```http\n模組 {extension} 載入成功!\n```")
 
-# @bot.command()
-# async def unload(ctx,extension): #卸載模組
-#     bot.unload_extension(f'cmds.{extension}')
-#     print(bot_m,f"<{extension}> unload complete!")
-#     await ctx.send(f"```http\n模組 {extension} 卸載成功!\n```")
+@bot.command()
+async def unload(ctx,extension): #卸載模組
+    bot.unload_extension(f'cmds.{extension}')
+    print(bot_m,f"<{extension}> unload complete!")
+    await ctx.send(f"```http\n模組 {extension} 卸載成功!\n```")
 
 @bot.command()
 async def reload(ctx,extension): #重裝模組
