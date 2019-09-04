@@ -32,9 +32,7 @@ class weather(Cog_Extension):
             # embed
             embed=discord.Embed(title=f"🌏天氣資訊",description="資料來源:openweathermap.org",url="https://openweathermap.org/",color=0xffd300)
             embed.set_thumbnail(url=f"https://openweathermap.org/img/w/{icon}.png") #天氣圖標
-            embed.add_field(name="目前溫度", value=f'{temp}℃', inline=False)
-            embed.add_field(name="最高溫度", value=f'{max_temp}℃', inline=True)
-            embed.add_field(name="最低溫度", value=f'{min_temp}℃', inline=True)    
+            embed.add_field(name="目前溫度(範圍)", value=f'{temp}℃({min_temp}~{max_temp})', inline=False)  
             embed.add_field(name="天氣概況", value=f'{overview}', inline=False)        
             embed.add_field(name="濕度", value=f'{humidity}%', inline=True)
             embed.add_field(name="城市", value=f'{city}/{country}', inline=True)
