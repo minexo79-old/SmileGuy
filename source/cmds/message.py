@@ -25,20 +25,10 @@ class message(Cog_Extension):
         elif msg.content == "三小" and msg.author != self.bot.user: # 三小
             await msg.channel.send(f"小三啦!👿")
 
-        elif msg.content == "幹" and msg.author != self.bot.user: # 幹
-            await msg.channel.send(f"別罵髒話啦~")
-
         elif msg.content == "幹你娘" and msg.author != self.bot.user: # 幹你娘
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://i.imgur.com/ngAdXUq.gif")
             embed.set_footer(text="https://i.imgur.com/ngAdXUq.gif")                
-            await msg.channel.send(embed=embed)
-
-        elif msg.content == "嘿嘿嘿" and msg.author != self.bot.user: # 嘿嘿嘿
-            embed = discord.Embed(color=0xffd300)
-            embed.set_image(url="https://thumbs.gfycat.com/InexperiencedBruisedCaecilian-size_restricted.gif")
-            embed.set_footer(text="https://thumbs.gfycat.com/InexperiencedBruisedCaecilian-size_restricted.gif")
-            await msg.channel.send(f"母湯喔~")                            
             await msg.channel.send(embed=embed)
 
         elif msg.content == "早安" and msg.author != self.bot.user: # 早安
@@ -50,13 +40,7 @@ class message(Cog_Extension):
             embed.set_image(url="https://meme.turn.tw/meme/451a9d0eefc8b546ec2f654b8b01022d.png")
             embed.set_footer(text="https://meme.turn.tw/meme/451a9d0eefc8b546ec2f654b8b01022d.png")
             await msg.channel.send(embed=embed)
-        
-        elif msg.content == "小孩子才做選擇" and msg.author != self.bot.user: # 小孩子才做選擇
-            embed = discord.Embed(color=0xffd300)
-            embed.set_image(url="https://meme.turn.tw/meme/2ab0b0594707277883792834100ba6cf.png")
-            embed.set_footer(text="https://meme.turn.tw/meme/2ab0b0594707277883792834100ba6cf.png")            
-            await msg.channel.send(f"我全都要.JPG")
-            await msg.channel.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(message(bot))  
