@@ -1,4 +1,0 @@
-discord.py
-flask
-python-dotenv
-requests

@@ -25,7 +25,6 @@ class smile(Cog_Extension):
         """時間設定"""
         time_stamp = datetime.datetime.now()
         time_m = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
-
         embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=0xffd300)
         embed.set_author(name="😀😀謝謝你加我進伺服器，我是微笑小子!!😆😆")
         embed.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
@@ -59,17 +58,24 @@ class smile(Cog_Extension):
     async def help(self,ctx):
         embed=discord.Embed(color=0xffd300)
         embed.set_author(name="😀😀我可用的功能：😆😆")
-        embed.add_field(name="!photo", value="發送梗圖", inline=False)
-        embed.add_field(name="!addphoto <網址>", value="增加梗圖", inline=True)
-        embed.add_field(name="!delphoto <網址>", value="刪除梗圖", inline=True)
-        embed.add_field(name="!photolist <網址>", value="查詢現有梗圖", inline=True)
-        embed.add_field(name="!wea <英文地名>", value="天氣查詢", inline=False)        
-        embed.add_field(name="!help", value="可用指令查詢", inline=False)
-        embed.add_field(name="!about", value="關於此機器人", inline=True)
-        embed.add_field(name="!ping", value="查詢延遲", inline=True)
-        embed.add_field(name="其他功能", value="訊息回復(ex: 蛤)", inline=True)
+        embed.add_field(name="圖片功能", value="!photo `=>` 發送梗圖\n!addphoto <網址> `=>` 增加梗圖\n!delphoto <網址> `=>` 刪除梗圖\n!photolist <網址> `=>` 查詢現有梗圖", inline=True)   
+        embed.add_field(name="關於機器人", value="!help `=>` 可用指令查詢\n!about `=>` 關於此機器人\n!info `=>` 查詢伺服器狀態\n!ping `=>` 查詢延遲", inline=False)
+        embed.add_field(name="一點都不實用的功能", value="!wea <英文地名> `=>` 天氣查詢\n訊息回復(Ex:蛤?)\n機器人加入通知(目前為壞掉狀態)", inline=True)
         embed.set_footer(text="SmileGuy Discord Bot")
         await ctx.send(embed=embed) #聊天室顯示訊息      
 
+    @commands.command() #查詢伺服器狀態
+    async def info(self,ctx):
+        server_name = ctx.guild.name
+        server_create_date = ctx.guild.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        server_user = len(ctx.guild.members)
+        text_channel = len(ctx.guild.text_channels)
+        voice_channel = len(ctx.guild.voice_channels)
+        # embed 訊息
+        embed = discord.Embed(color=0xffd300)
+        embed.set_thumbnail(url="https://pic.sopili.net/pub/emoji/apple/64/1f9d0.png")
+        embed.add_field(name="伺服器訊息", value=f"名稱：{server_name}\n創建日期：{server_create_date}\n伺服器人數：{server_user}\n文字頻道：{text_channel}\n語音頻道：{voice_channel}", inline=False)
+        embed.set_footer(text="SmileGuy Discord Bot")
+        await ctx.send(embed=embed)
 def setup(bot):
     bot.add_cog(smile(bot))  

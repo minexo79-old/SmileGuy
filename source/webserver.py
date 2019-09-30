@@ -1,5 +1,11 @@
 from flask import Flask
 from threading import Thread
+import json
+
+"""匯入設定檔json 建立jdata"""
+with open('setting_bot.json',mode='r',encoding='utf8') as jfile_bot: #機器人設定檔
+    jdata_bot = json.load(jfile_bot)
+
 
 app = Flask('')
 

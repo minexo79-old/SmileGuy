@@ -22,9 +22,6 @@ class message(Cog_Extension):
             await msg.channel.send(f"蛤?")            
             await msg.channel.send(embed=embed)
 
-        elif msg.content == "三小" and msg.author != self.bot.user: # 三小
-            await msg.channel.send(f"小三啦!👿")
-
         elif msg.content == "幹你娘" and msg.author != self.bot.user: # 幹你娘
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://i.imgur.com/ngAdXUq.gif")
