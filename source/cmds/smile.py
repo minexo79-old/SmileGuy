@@ -58,9 +58,9 @@ class smile(Cog_Extension):
     async def help(self,ctx):
         embed=discord.Embed(color=0xffd300)
         embed.set_author(name="😀😀我可用的功能：😆😆")
-        embed.add_field(name="圖片功能", value="!photo `=>` 發送梗圖\n!addphoto <網址> `=>` 增加梗圖\n!delphoto <網址> `=>` 刪除梗圖\n!photolist <網址> `=>` 查詢現有梗圖", inline=True)   
-        embed.add_field(name="關於機器人", value="!help `=>` 可用指令查詢\n!about `=>` 關於此機器人\n!info `=>` 查詢伺服器狀態\n!ping `=>` 查詢延遲", inline=False)
-        embed.add_field(name="一點都不實用的功能", value="!wea <英文地名> `=>` 天氣查詢\n訊息回復(Ex:蛤?)\n機器人加入通知(目前為壞掉狀態)", inline=True)
+        embed.add_field(name="圖片功能", value="photo `=>` 發送梗圖\naddphoto <網址> `=>` 增加梗圖\ndelphoto <網址> `=>` 刪除梗圖\nphotolist <網址> `=>` 查詢現有梗圖", inline=True)   
+        embed.add_field(name="關於機器人", value="help `=>` 可用指令查詢\nabout `=>` 關於此機器人\ninfo `=>` 查詢伺服器狀態\nping `=>` 查詢延遲", inline=False)
+        embed.add_field(name="一點都不實用的功能", value="!msgclear <數量> `=>` 清除訊息\nwea <英文地名> `=>` 天氣查詢\n訊息回復(Ex:蛤?)\n機器人加入通知(目前為壞掉狀態)", inline=True)
         embed.set_footer(text="SmileGuy Discord Bot")
         await ctx.send(embed=embed) #聊天室顯示訊息      
 

@@ -15,6 +15,6 @@ icon 來源:https://www.easyicon.net/language.en/1214210-robot_face_icon.html
 ```
 
 * 模組裝載指令:  
-  * 載入: !load <模組>
-  * 卸載: !unload <模組>
-  * 重載: !reload <模組>
+  * 載入: s!load <模組>
+  * 卸載: s!unload <模組>
+  * 重載: s!reload <模組>

@@ -4,6 +4,7 @@ from core.classes import Cog_Extension
 import random
 import json
 import time
+import asyncio
 
 """匯入設定檔json 建立jdata"""
 with open('setting_react.json',mode='r',encoding='utf8') as jfile_in: #互動設定檔
@@ -11,6 +12,13 @@ with open('setting_react.json',mode='r',encoding='utf8') as jfile_in: #互動設
 
 class message(Cog_Extension):
     """訊息回復"""
+
+    @commands.command() #清理訊息
+    async def msgclear(self,ctx,num:int):
+        await ctx.channel.purge(limit=num + 1)
+        await ctx.send("訊息清除完畢!")
+        await asyncio.sleep(2)
+        await ctx.channel.purge(limit=1)   
 
     @commands.Cog.listener()
     async def on_message(self,msg):
