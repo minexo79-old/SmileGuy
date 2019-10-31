@@ -11,7 +11,7 @@ app = Flask('')
 
 @app.route('/')
 def home():
-    return "Smile is run."
+    return "Smile is running."
 
 def run():
     app.run(host="0.0.0.0",port=8080)

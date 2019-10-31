@@ -26,7 +26,7 @@ async def on_ready():
     time_m = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
     #終端訊息
     await bot.change_presence(status=discord.Status.online,activity=discord.Game(jdata_bot['Status'])) #bot狀態
-    os.system('cls') #windows專用
+    os.system('clear') #linux專用
     print(jdata_bot['Cmd_message'])
     print(bot_m,time_m)
 
@@ -44,17 +44,17 @@ for filename in os.listdir('./cmds'):
     if filename.endswith('.py'):
         bot.load_extension(f'cmds.{filename[:-3]}')
 
-@bot.command()
-async def load(ctx,extension): #載入模組
-    bot.load_extension(f'cmds.{extension}')
-    print(bot_m,f"<{extension}> load complete!")
-    await ctx.send(f"```http\n模組 {extension} 載入成功!\n```")
+# @bot.command()
+# async def load(ctx,extension): #載入模組
+#     bot.load_extension(f'cmds.{extension}')
+#     print(bot_m,f"<{extension}> load complete!")
+#     await ctx.send(f"```http\n模組 {extension} 載入成功!\n```")
 
-@bot.command()
-async def unload(ctx,extension): #卸載模組
-    bot.unload_extension(f'cmds.{extension}')
-    print(bot_m,f"<{extension}> unload complete!")
-    await ctx.send(f"```http\n模組 {extension} 卸載成功!\n```")
+# @bot.command()
+# async def unload(ctx,extension): #卸載模組
+#     bot.unload_extension(f'cmds.{extension}')
+#     print(bot_m,f"<{extension}> unload complete!")
+#     await ctx.send(f"```http\n模組 {extension} 卸載成功!\n```")
 
 @bot.command()
 async def reload(ctx,extension): #重裝模組

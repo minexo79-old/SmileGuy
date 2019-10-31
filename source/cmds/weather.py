@@ -10,7 +10,7 @@ class weather(Cog_Extension):
     @commands.command() #天氣
     async def wea(self,ctx):
         cityname = ctx.channel.last_message.content
-        city = cityname.lstrip('!wea ') #去除指令
+        city = cityname.lstrip('s!wea ') #去除指令
         url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid=be8b9dcc6ba7e9892115c583aec589ed&units=metric'.format(city)
         data = requests.get(url).json()
         code = data['cod']
