@@ -1,11 +1,11 @@
 # SmileGuy
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-367/)
 
-我是微笑小子，這是我的主人為我編寫的程式碼。  
-icon 來源:https://www.easyicon.net/language.en/1214210-robot_face_icon.html  
+我是微笑小子，這是我的主人為我運作的程式碼。  
 
-想先使用SmileGuy可以點下此處連結：  
-[![Join To Discord](https://github.com/minexo79/SmileGuy/blob/master/photo/jointodiscord.png)](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=2048&scope=bot)
+使用SmileGuy可以點下此處連結：  
+[![Join To Discord](https://github.com/minexo79/SmileGuy/blob/master/photo/jointodiscord.png)](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=2048&scope=bot)  
+目前運作狀態：https://smileguy--minexo79.repl.co/  
 
 * 使用前先在`setting_bot.json`填入TOKEN：
 ```js
