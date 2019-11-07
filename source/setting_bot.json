@@ -1,7 +1,7 @@
 {
 	"Status" : "SmileGuy Running!",
-	"Version" : "1.2.4(201901105)",
-	"Cmd_message" : ">> SmileGuy Running! V1.2.4(2019/11/05)",
+	"Version" : "1.2.5(201901106)",
+	"Cmd_message" : ">> SmileGuy Running! V1.2.5(2019/11/06)",
 	"help" : "s!help",
 	"Token" : ""
 }

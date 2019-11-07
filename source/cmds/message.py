@@ -17,13 +17,12 @@ class message(Cog_Extension):
     async def msgclear(self,ctx,num:int):
         await ctx.channel.purge(limit=num + 1)
         await ctx.send("訊息清除完畢!")
-        await asyncio.sleep(2)
+        await asyncio.sleep(3)
         await ctx.channel.purge(limit=1)   
 
     @commands.Cog.listener()
     async def on_message(self, msg):
-        keywords = ["蛤","蝦"]
-        if msg.content in keywords and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 蛤
+        if msg.content == '蛤' and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 蛤
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://truth.bahamut.com.tw/s01/201809/19336b6cfc3198bd9c7e9bf564eb1223.JPG")
             embed.set_footer(text="https://truth.bahamut.com.tw/s01/201809/19336b6cfc3198bd9c7e9bf564eb1223.JPG")

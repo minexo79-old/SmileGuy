@@ -3,6 +3,7 @@ from discord.ext import commands,tasks
 from core.classes import Cog_Extension
 import datetime
 import json
+import embedconfig
 
 """匯入設定檔json 建立jdata"""
 with open('setting_bot.json',mode='r',encoding='utf8') as jfile_bot: #互動設定檔
@@ -25,44 +26,44 @@ class smile(Cog_Extension):
         """時間設定"""
         time_stamp = datetime.datetime.now()
         time_m = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
-        embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=0xffd300)
+        embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=embedconfig.color)
         embed.set_author(name="😀😀謝謝你加我進伺服器，我是微笑小子!!😆😆")
         embed.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
         embed.add_field(name="目前版本", value=jdata_bot['Version'], inline=True)
         embed.add_field(name="機器人作者", value="minexo79", inline=False)
         embed.add_field(name="指令幫助", value=jdata_bot['help'], inline=True)
-        embed.set_footer(text="SmileGuy Discord Bot")
+        embed.set_footer(text=embedconfig.footer)
         channel = self.bot.get_channel(guild._system_channel_id) # 抓取預設聊天室ID
         print(bot_m,"joined at",guild.name,blue_text,time_m,white_text) #抓取伺服器名稱並且印在CLR上面
         await channel.send(embed=embed) #聊天室顯示加入訊息
 
     @commands.command() #ping查詢
     async def ping(self,ctx):
-        embed = discord.Embed(color=0xffd300)
+        embed = discord.Embed(color=embedconfig.color)
         embed.add_field(name="我目前的延遲", value=f"{round(self.bot.latency*1000)} ms", inline=False)
-        embed.set_footer(text="SmileGuy Discord Bot")
+        embed.set_footer(text=embedconfig.footer)
         await ctx.send(embed=embed)
     
     @commands.command() #關於
     async def about(self,ctx):
-        embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=0xffd300)
+        embed=discord.Embed(title="我的原始碼: https://github.com/minexo79/SmileGuy", url="https://github.com/minexo79/SmileGuy",color=embedconfig.color)
         embed.set_author(name="😀😀謝謝你加我進伺服器，我是微笑小子!!😆😆")
         embed.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
         embed.add_field(name="目前版本", value=jdata_bot['Version'], inline=True)
         embed.add_field(name="機器人作者", value="minexo79", inline=False)
         embed.add_field(name="指令幫助", value=jdata_bot['help'], inline=True)
-        embed.set_footer(text="SmileGuy Discord Bot")
+        embed.set_footer(text=embedconfig.footer)
         await ctx.send(embed=embed) #聊天室顯示訊息
     
     @commands.command(pass_context = True) #HELP
     async def help(self,ctx):
-        embed=discord.Embed(color=0xffd300)
+        embed=discord.Embed(color=embedconfig.color)
         embed.set_author(name="😀😀我可用的功能：😆😆")
         embed.add_field(name="圖片功能", value="photo `=>` 發送梗圖\naddphoto <網址> `=>` 增加梗圖\ndelphoto <網址> `=>` 刪除梗圖\nphotolist <網址> `=>` 查詢現有梗圖", inline=True)   
         embed.add_field(name="關於機器人", value="help `=>` 可用指令查詢\nabout `=>` 關於此機器人\ninfo `=>` 查詢伺服器狀態\nping `=>` 查詢延遲", inline=False)
-        embed.add_field(name="一點都不實用的功能", value="msgclear <數量> `=>` 清除訊息\nwea <英文地名> `=>` 天氣查詢\n訊息回復(Ex:蛤?)\n機器人加入通知(目前為壞掉狀態)", inline=True)
+        embed.add_field(name="一點都不實用的功能", value="msgclear <數量> `=>` 清除訊息\nwea <英文地名> `=>` 天氣查詢\n訊息回復(Ex:蛤?)\n機器人加入通知", inline=True)
         embed.add_field(name="釣魚(開發中)", value="fish `=>` 開釣", inline=False)
-        embed.set_footer(text="SmileGuy Discord Bot")
+        embed.set_footer(text=embedconfig.footer)
         await ctx.send(embed=embed) #聊天室顯示訊息      
 
     @commands.command() #查詢伺服器狀態
@@ -73,10 +74,10 @@ class smile(Cog_Extension):
         text_channel = len(ctx.guild.text_channels)
         voice_channel = len(ctx.guild.voice_channels)
         # embed 訊息
-        embed = discord.Embed(color=0xffd300)
+        embed = discord.Embed(color=embedconfig.color)
         embed.set_thumbnail(url="https://pic.sopili.net/pub/emoji/apple/64/1f9d0.png")
         embed.add_field(name="伺服器訊息", value=f"名稱：{server_name}\n創建日期：{server_create_date}\n伺服器人數：{server_user}\n文字頻道：{text_channel}\n語音頻道：{voice_channel}", inline=False)
-        embed.set_footer(text="SmileGuy Discord Bot")
+        embed.set_footer(text=embedconfig.footer)
         await ctx.send(embed=embed)
         
 def setup(bot):
