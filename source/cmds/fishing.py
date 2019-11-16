@@ -6,22 +6,22 @@ import asyncio
 import embedconfig
 import mysql.connector
 
-conn = mysql.connector.connect(
-    host="",
-    user="",
-    passwd="",
-    database=""
-)
-
-c = conn.cursor()
-
-c.execute("CREATE TABLE IF NOT EXISTS smileguy_fishing (user_id VARCHAR(255), exp FLOAT(255,1))")
-
 class fishing(Cog_Extension):
     """釣魚"""
 
     @commands.command() #釣魚
     async def fish(self,ctx,feature:str):
+
+        conn = mysql.connector.connect(
+            host="",
+            user="",
+            passwd="",
+            database=""
+        )
+
+        c = conn.cursor()
+
+        c.execute("CREATE TABLE IF NOT EXISTS smileguy_fishing (user_id VARCHAR(255), exp FLOAT(255,1))")
         nologin = 0;  
         if feature == 'exp': # 查詢經驗
             sql = f"SELECT * FROM smileguy_fishing"
@@ -37,13 +37,15 @@ class fishing(Cog_Extension):
                     embed.add_field(name='玩家', value=f"{ctx.message.author.mention}\n({user_id})", inline=False)
                     embed.add_field(name='經驗值', value="%s" % (exp), inline=False)
                     embed.set_footer(text=embedconfig.footer)
-                    await ctx.send(embed=embed)      
+                    await ctx.send(embed=embed)     
+                    conn.close() 
                     break    
                 else: # 沒註冊
                     nologin = nologin + 1; 
 
             if(nologin != 0):
                 await ctx.send("還沒註冊喔~'\n註冊指令:`fish reg`")
+                conn.close()
 
         elif feature == 'reg': # 註冊
             sql = "SELECT * FROM smileguy_fishing"
@@ -59,12 +61,14 @@ class fishing(Cog_Extension):
 
             if(nologin != 0):
                 await ctx.send("註冊過了喔~")
+                conn.close()
             else:
                 sql = "INSERT INTO smileguy_fishing (user_id, exp) VALUES (%s,%s)"
                 val = (f"{ctx.message.author.id}", "0.0")
                 c.execute(sql, val)
                 conn.commit()      
-                await ctx.send("釣魚功能註冊成功!!")    
+                await ctx.send("釣魚功能註冊成功!!")
+                conn.close()    
 
         elif feature == 'now': # 釣魚
             #SQl Search user
@@ -103,6 +107,7 @@ class fishing(Cog_Extension):
                         embed.add_field(name='結果', value=f"你釣到 __**大白鯊**__ !!!\n`經驗值 + 1.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)         
+                        conn.close()
                         break
 
                     elif fish_val >= 0.5 and fish_val < 1.2: #一般魚
@@ -136,6 +141,7 @@ class fishing(Cog_Extension):
                         embed.add_field(name='結果', value=f"恭喜釣到一隻 __**{random_mes}**__ !!!\n`經驗值 + 1.0`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)
+                        conn.close()
                         break                    
 
                     elif fish_val >= 0.2 and fish_val < 0.5: #釣到垃圾
@@ -152,6 +158,7 @@ class fishing(Cog_Extension):
                         embed.add_field(name='結果', value=f"釣到了一坨 __**垃圾**__ !!!\n`經驗值 + 0.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)
+                        conn.close()
                         break
 
                     else: #沒釣到
@@ -160,6 +167,7 @@ class fishing(Cog_Extension):
                         embed.add_field(name='結果', value="甚麼也沒有釣到......", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(embed=embed)  
+                        conn.close()
                         break
 
                 else: # 沒註冊
@@ -167,11 +175,13 @@ class fishing(Cog_Extension):
 
             if(nologin != 0):
                 await ctx.send("還沒註冊喔~'\n註冊指令:`fish reg`")
+                conn.close()
         else:
             embed = discord.Embed(color=embedconfig.color)
             embed.add_field(name="訊息", value="**訊息輸入錯誤**", inline=False)
             embed.set_footer(text=embedconfig.footer)   
             await ctx.send(embed=embed)  
+            conn.close()
                 
 def setup(bot):
     bot.add_cog(fishing(bot))       
