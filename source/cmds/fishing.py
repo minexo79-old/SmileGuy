@@ -52,9 +52,10 @@ class fishing(Cog_Extension):
             for row in myresult:
                 user_id = row[0]
                 if str(ctx.message.author.id) != str(user_id): # 沒註冊
-                    nologin = 0;
+                    nologin = 0
                 else: # 有註冊 
-                    nologin = nologin + 1;
+                    nologin = nologin + 1
+                    break
 
             if(nologin != 0):
                 await ctx.send("註冊過了喔~")
