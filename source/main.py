@@ -65,4 +65,4 @@ async def reload(ctx,extension): #重裝模組
 
 if __name__ == "__main__":
     keep_alive()
-    bot.run(jdata_bot[f"Token"])
+    bot.run(jdata_bot[f"Token"],bot=True,reconnect=True)
