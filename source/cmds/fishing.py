@@ -34,7 +34,7 @@ class fishing(Cog_Extension):
                     nologin = 0;
                     ## Embed
                     embed = discord.Embed(color=embedconfig.color)
-                    embed.add_field(name='玩家', value=f"{ctx.message.author}({user_id})", inline=False)   
+                    embed.add_field(name='玩家', value=f"{ctx.message.author.mention}\n({user_id})", inline=False)
                     embed.add_field(name='經驗值', value="%s" % (exp), inline=False)
                     embed.set_footer(text=embedconfig.footer)
                     await ctx.send(embed=embed)      
@@ -63,7 +63,7 @@ class fishing(Cog_Extension):
                 sql = "INSERT INTO smileguy_fishing (user_id, exp) VALUES (%s,%s)"
                 val = (f"{ctx.message.author.id}", "0.0")
                 c.execute(sql, val)
-                conn.commit()        
+                conn.commit()      
                 await ctx.send("釣魚功能註冊成功!!")    
 
         elif feature == 'now': # 釣魚
