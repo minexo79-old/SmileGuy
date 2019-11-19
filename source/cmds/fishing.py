@@ -4,7 +4,7 @@ from core.classes import Cog_Extension
 import random
 import asyncio
 import embedconfig
-import mysql.connector
+import MySQLdb
 
 class fishing(Cog_Extension):
     """釣魚"""
@@ -12,11 +12,11 @@ class fishing(Cog_Extension):
     @commands.command() #釣魚
     async def fish(self,ctx,feature:str):
 
-        conn = mysql.connector.connect(
-            host="",
-            user="",
-            passwd="",
-            database=""
+        conn = MySQLdb.connect(
+            host="remotemysql.com",
+            user="67oX59zbHj",
+            passwd="GOTZqEopKa",
+            database="67oX59zbHj"
         )
 
         c = conn.cursor()
@@ -104,7 +104,7 @@ class fishing(Cog_Extension):
                         attachment = "attachment://shark.png" #embed指標
                         embed = discord.Embed(color=embedconfig.color)
                         embed.set_image(url=attachment)
-                        embed.add_field(name='結果', value=f"你釣到 __**大白鯊**__ !!!\n`經驗值 + 1.5`", inline=False)
+                        embed.add_field(name='結果', value=f"{user}\n釣到 __**大白鯊**__ !!!\n`經驗值 + 1.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)         
                         conn.close()
@@ -138,7 +138,7 @@ class fishing(Cog_Extension):
                         #Embed
                         embed = discord.Embed(color=embedconfig.color)
                         embed.set_thumbnail(url=attachment)
-                        embed.add_field(name='結果', value=f"恭喜釣到一隻 __**{random_mes}**__ !!!\n`經驗值 + 1.0`", inline=False)
+                        embed.add_field(name='結果', value=f"恭喜{user}\n釣到一隻 __**{random_mes}**__ !!!\n`經驗值 + 1.0`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)
                         conn.close()
@@ -155,7 +155,7 @@ class fishing(Cog_Extension):
                         attachment = "attachment://bone.png" #embed指標            
                         embed = discord.Embed(color=embedconfig.color)
                         embed.set_thumbnail(url=attachment)
-                        embed.add_field(name='結果', value=f"釣到了一坨 __**垃圾**__ !!!\n`經驗值 + 0.5`", inline=False)
+                        embed.add_field(name='結果', value=f"{user}\n釣到了一坨 __**垃圾**__ !!!\n`經驗值 + 0.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(file=file,embed=embed)
                         conn.close()
@@ -164,7 +164,7 @@ class fishing(Cog_Extension):
                     else: #沒釣到
                         ## Embed
                         embed = discord.Embed(color=embedconfig.color)
-                        embed.add_field(name='結果', value="甚麼也沒有釣到......", inline=False)
+                        embed.add_field(name='結果', value=f"{user}\n甚麼也沒有釣到......", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(embed=embed)  
                         conn.close()

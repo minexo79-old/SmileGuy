@@ -57,7 +57,7 @@ class smile(Cog_Extension):
         await ctx.send(embed=embed1) #聊天室顯示訊息
         embed2=discord.Embed(title="特別感謝",color=embedconfig.color)
         embed2.set_thumbnail(url="https://cdn.pixabay.com/photo/2013/04/01/09/07/wink-98461_960_720.png")
-        embed2.add_field(name="釣客.GIF", value="```css\nSAIFRIX#1996\n```", inline=True)
+        embed2.add_field(name="釣魚圖片繪製", value="```css\nSAIFRIX#1996\n```", inline=True)
         embed2.set_footer(text=embedconfig.footer)    
         await ctx.send(embed=embed2) #聊天室顯示訊息    
     
