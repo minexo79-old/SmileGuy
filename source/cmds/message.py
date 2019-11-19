@@ -22,24 +22,24 @@ class message(Cog_Extension):
 
     @commands.Cog.listener()
     async def on_message(self, msg):
-        if msg.content == '蛤' and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 蛤
+        if msg.content == '蛤' and msg.author != self.bot.user and msg.guild.id != ## : # 蛤
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://truth.bahamut.com.tw/s01/201809/19336b6cfc3198bd9c7e9bf564eb1223.JPG")
             embed.set_footer(text="https://truth.bahamut.com.tw/s01/201809/19336b6cfc3198bd9c7e9bf564eb1223.JPG")
             await msg.channel.send(f"蛤?")            
             await msg.channel.send(embed=embed)
 
-        elif msg.content == 'e04' and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 幹你娘
+        elif msg.content == 'e04' and msg.author != self.bot.user and msg.guild.id != ## : # 幹你娘
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://i.pinimg.com/originals/c9/75/65/c975658135e76db676aae7eca0ecc876.gif")
             embed.set_footer(text="https://i.pinimg.com/originals/c9/75/65/c975658135e76db676aae7eca0ecc876.gif")                
             await msg.channel.send(embed=embed)
 
-        elif msg.content == '早' and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 早安
+        elif msg.content == '早' and msg.author != self.bot.user and msg.guild.id != ## : # 早安
             ramdom_mes = random.choice(jdata_in[f'chat_mes_morning'])
             await msg.channel.send(f"{msg.author.mention} {ramdom_mes}")
             
-        elif msg.content == '喔' and msg.author != self.bot.user and msg.guild.id != 534366668076613632 : # 喔
+        elif msg.content == '喔' and msg.author != self.bot.user and msg.guild.id != ## : # 喔
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://meme.turn.tw/meme/451a9d0eefc8b546ec2f654b8b01022d.png")
             embed.set_footer(text="https://meme.turn.tw/meme/451a9d0eefc8b546ec2f654b8b01022d.png")

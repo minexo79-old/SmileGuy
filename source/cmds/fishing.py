@@ -13,10 +13,10 @@ class fishing(Cog_Extension):
     async def fish(self,ctx,feature:str):
 
         conn = MySQLdb.connect(
-            host="remotemysql.com",
-            user="67oX59zbHj",
-            passwd="GOTZqEopKa",
-            database="67oX59zbHj"
+            host="",
+            user="",
+            passwd="",
+            database=""
         )
 
         c = conn.cursor()
