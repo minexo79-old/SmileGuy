@@ -7,10 +7,14 @@
 [![Join To Discord](https://github.com/minexo79/SmileGuy/blob/master/photo/jointodiscord.png)]("https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)  
 目前運作狀態：https://smileguy--minexo79.repl.co/  
 
-* 使用前先在`setting_bot.json`填入TOKEN：
+* 使用前先在`setting_bot.json`填入以下資料：
 ```js
 {
-	"Token" : "在Discord Developer Portal獲取的TOKEN"
+	"Token" : "在Discord Developer Portal獲取的TOKEN",
+    	"SQLserver": "你的MySQL伺服器",
+    	"User":"SQL使用者",
+   	"Passwd":"SQL密碼",
+   	"Database":"指定資料庫"
 }
 ```
 
