@@ -48,17 +48,17 @@ for filename in os.listdir('./cmds'):
     if filename.endswith('.py'):
         bot.load_extension(f'cmds.{filename[:-3]}')
 
-# @bot.command()
-# async def load(ctx,extension): #載入模組
-#     bot.load_extension(f'cmds.{extension}')
-#     print(bot_m,f"<{extension}> load complete.")
-#     await ctx.send(f"```http\n模組 {extension} 已載入。\n```")
+@bot.command()
+async def load(ctx,extension): #載入模組
+    bot.load_extension(f'cmds.{extension}')
+    print(bot_m,f"<{extension}> load complete.")
+    await ctx.send(f"```http\n模組 {extension} 已載入。\n```")
 
-# @bot.command()
-# async def unload(ctx,extension): #卸載模組
-#     bot.unload_extension(f'cmds.{extension}')
-#     print(bot_m,f"<{extension}> unload complete.")
-#     await ctx.send(f"```http\n模組 {extension} 已卸載。\n```")
+@bot.command()
+async def unload(ctx,extension): #卸載模組
+    bot.unload_extension(f'cmds.{extension}')
+    print(bot_m,f"<{extension}> unload complete.")
+    await ctx.send(f"```http\n模組 {extension} 已卸載。\n```")
 
 @bot.command()
 async def reload(ctx,extension): #重裝模組
