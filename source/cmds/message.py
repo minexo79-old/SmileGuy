@@ -29,7 +29,7 @@ class message(Cog_Extension):
             await msg.channel.send(f"蛤?")            
             await msg.channel.send(embed=embed)
 
-        elif msg.content == 'e04' and msg.author != self.bot.user and msg.guild.id != ## : # 幹你娘
+        elif msg.content == 'e04' and msg.author != self.bot.user and msg.guild.id != ## : # 館長香蕉
             embed = discord.Embed(color=0xffd300)
             embed.set_image(url="https://i.pinimg.com/originals/c9/75/65/c975658135e76db676aae7eca0ecc876.gif")
             embed.set_footer(text="https://i.pinimg.com/originals/c9/75/65/c975658135e76db676aae7eca0ecc876.gif")                
@@ -47,7 +47,6 @@ class message(Cog_Extension):
             
         else:
             pass
-
 
 def setup(bot):
     bot.add_cog(message(bot))  

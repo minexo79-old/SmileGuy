@@ -5,6 +5,11 @@ import random
 import asyncio
 import embedconfig
 import MySQLdb
+import json
+
+"""匯入設定檔json 建立jdata"""
+with open('setting_bot.json',mode='r',encoding='utf8') as jfile_bot: #機器人設定檔
+    jdata_bot = json.load(jfile_bot)
 
 class fishing(Cog_Extension):
     """釣魚"""
@@ -13,10 +18,10 @@ class fishing(Cog_Extension):
     async def fish(self,ctx,feature:str):
 
         conn = MySQLdb.connect(
-            host="",
-            user="",
-            passwd="",
-            database=""
+            host=jdata_bot['SQLserver'],
+            user=jdata_bot['User'],
+            passwd=jdata_bot['Passwd'],
+            database=jdata_bot['Database']
         )
 
         c = conn.cursor()
