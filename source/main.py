@@ -4,8 +4,6 @@ from discord.ext import commands,tasks
 import os
 import json
 import datetime
-import webserver
-from webserver import keep_alive
 import embedconfig
 import pytz
 
@@ -67,5 +65,4 @@ async def reload(ctx,extension): #重裝模組
     await ctx.send(f"```http\n模組 {extension} 已重裝。\n```")
 
 if __name__ == "__main__":
-    keep_alive()
     bot.run(jdata_bot[f"Token"],bot=True,reconnect=True)
