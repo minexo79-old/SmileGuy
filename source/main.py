@@ -4,8 +4,6 @@ from discord.ext import commands,tasks
 import os
 import json
 import datetime
-import webserver
-from webserver import keep_alive
 import embedconfig
 import pytz
 
@@ -52,20 +50,19 @@ for filename in os.listdir('./cmds'):
 async def load(ctx,extension): #載入模組
     bot.load_extension(f'cmds.{extension}')
     print(bot_m,f"<{extension}> load complete.")
-    await ctx.send(f"```http\n模組 {extension} 已載入。\n```")
+    await ctx.send(f">>> 模組 {extension} 已載入。")
 
 @bot.command()
 async def unload(ctx,extension): #卸載模組
     bot.unload_extension(f'cmds.{extension}')
     print(bot_m,f"<{extension}> unload complete.")
-    await ctx.send(f"```http\n模組 {extension} 已卸載。\n```")
+    await ctx.send(f">>> 模組 {extension} 已卸載。")
 
 @bot.command()
 async def reload(ctx,extension): #重裝模組
     bot.reload_extension(f'cmds.{extension}')
     print(bot_m,f"<{extension}> reload complete.")
-    await ctx.send(f"```http\n模組 {extension} 已重裝。\n```")
+    await ctx.send(f">>> 模組 {extension} 已重裝。")
 
 if __name__ == "__main__":
-    keep_alive()
     bot.run(jdata_bot[f"Token"],bot=True,reconnect=True)

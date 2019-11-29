@@ -18,7 +18,7 @@ class bgtask(Cog_Extension):
                     if filename.endswith('.py'):
                         self.bot.reload_extension('cmds.fishing')
                         print(bot_m,"Auto reload.")
-                        await asyncio.sleep(100)
+                        await asyncio.sleep(3600)
 
         self.bg_task = self.bot.loop.create_task(interval())
             
