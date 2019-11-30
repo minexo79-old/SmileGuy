@@ -11,14 +11,13 @@ class bgtask(Cog_Extension):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
     
-        async def interval(): #每60秒重裝一次模組
+        async def interval():
             await self.bot.wait_until_ready()
             while not self.bot.is_closed():
-                for filename in os.listdir('./cmds'):
-                    if filename.endswith('.py'):
-                        self.bot.reload_extension('cmds.fishing')
-                        print(bot_m,"Auto reload.")
-                        await asyncio.sleep(3600)
+                await self.bot.change_presence(status=discord.Status.online,activity=discord.Game("幫助：s!help")) #bot狀態
+                await asyncio.sleep(10)
+                await self.bot.change_presence(status=discord.Status.online,activity=discord.Game("SmileGuys Running!")) #bot狀態
+                await asyncio.sleep(10)                     
 
         self.bg_task = self.bot.loop.create_task(interval())
             
