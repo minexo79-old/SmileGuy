@@ -1,4 +1,5 @@
 discord.py == 1.2.5
+multidict == 4.3.0
 mysqlclient
 pytz
 requests
