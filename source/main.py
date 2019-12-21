@@ -50,7 +50,7 @@ for filename in os.listdir('./cmds'):
 async def load(ctx,extension): #載入模組
     bot.load_extension(f'cmds.{extension}')
     print(bot_m,f"<{extension}> load complete.")
-    await ctx.send(f">>> 模組 {extension} 已載入。")
+    await ctx.send(f">>> 1模組 {extension} 已載入。")
 
 @bot.command()
 async def unload(ctx,extension): #卸載模組
