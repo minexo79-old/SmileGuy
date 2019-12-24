@@ -35,7 +35,7 @@ class fishing(Cog_Extension):
             for row in myresult:
                 user_id = row[0]
                 exp = row[1]
-                if str(ctx.message.author.id) == str(user_id): # 有註冊
+                if int(ctx.message.author.id) == int(user_id): # 有註冊
                     nologin = 0;
                     ## Embed
                     embed = discord.Embed(color=embedconfig.color)
@@ -58,7 +58,7 @@ class fishing(Cog_Extension):
             myresult = c.fetchall()
             for row in myresult:
                 user_id = row[0]
-                if str(ctx.message.author.id) != str(user_id): # 沒註冊
+                if int(ctx.message.author.id) != int(user_id): # 沒註冊
                     nologin = 0
                 else: # 有註冊 
                     nologin = nologin + 1
@@ -182,11 +182,7 @@ class fishing(Cog_Extension):
                 await ctx.send("還沒註冊喔~'\n註冊指令:`fish reg`")
                 conn.close()
         else:
-            embed = discord.Embed(color=embedconfig.color)
-            embed.add_field(name="訊息", value="**訊息輸入錯誤**", inline=False)
-            embed.set_footer(text=embedconfig.footer)   
-            await ctx.send(embed=embed)  
-            conn.close()
+            pass
                 
 def setup(bot):
     bot.add_cog(fishing(bot))       
