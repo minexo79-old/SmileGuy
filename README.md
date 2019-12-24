@@ -10,10 +10,11 @@
 ```js
 {
 	"Token" : "在Discord Developer Portal獲取的TOKEN",
-    	"SQLserver": "你的MySQL伺服器",
-    	"User":"SQL使用者",
-   	"Passwd":"SQL密碼",
-   	"Database":"指定資料庫"
+    "SQLserver": "你的MySQL伺服器",
+    "User":"MySQL使用者",
+   	"Passwd":"MySQL密碼",
+   	"Database":"指定資料表",
+	"Owner":"權限擁有者"
 }
 ```
 
