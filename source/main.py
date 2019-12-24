@@ -4,7 +4,6 @@ from discord.ext import commands,tasks
 import os
 import json
 import datetime
-import embedconfig
 import pytz
 
 tz = pytz.timezone('Asia/Taipei')
@@ -32,37 +31,11 @@ async def on_ready():
     print(jdata_bot['Cmd_message'])
     print(bot_m,time_m)
 
-@bot.event #錯誤的指令
-async def on_command_error(ctx,error):
-    if isinstance(error,CommandNotFound) and ctx.author != bot.user:
-        embed = discord.Embed(color=embedconfig.color)
-        embed.add_field(name="訊息", value="**訊息輸入錯誤**", inline=False)
-        embed.set_footer(text=embedconfig.footer)   
-        await ctx.send(embed=embed)  
-
 """模組控制"""
 
 for filename in os.listdir('./cmds'):
     if filename.endswith('.py'):
         bot.load_extension(f'cmds.{filename[:-3]}')
-
-@bot.command()
-async def load(ctx,extension): #載入模組
-    bot.load_extension(f'cmds.{extension}')
-    print(bot_m,f"<{extension}> load complete.")
-    await ctx.send(f">>> 模組 {extension} 已載入。")
-
-@bot.command()
-async def unload(ctx,extension): #卸載模組
-    bot.unload_extension(f'cmds.{extension}')
-    print(bot_m,f"<{extension}> unload complete.")
-    await ctx.send(f">>> 模組 {extension} 已卸載。")
-
-@bot.command()
-async def reload(ctx,extension): #重裝模組
-    bot.reload_extension(f'cmds.{extension}')
-    print(bot_m,f"<{extension}> reload complete.")
-    await ctx.send(f">>> 模組 {extension} 已重裝。")
 
 if __name__ == "__main__":
     bot.run(jdata_bot[f"Token"],bot=True,reconnect=True)
