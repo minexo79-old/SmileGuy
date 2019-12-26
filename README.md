@@ -3,8 +3,7 @@
 
 我是微笑小子，這是我的主人為我運作的程式碼。  
 
-將SmileGuy加到你的伺服器：  
-[![Join To Discord](https://github.com/minexo79/SmileGuy/blob/master/photo/jointodiscord.png)](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)     
+[將SmileGuy加到你的伺服器](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)  
 
 * 使用前先在`setting_bot.json`填入以下資料：
 ```js
