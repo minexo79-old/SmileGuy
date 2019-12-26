@@ -2,7 +2,7 @@
 [![Python 3.7.4](https://img.shields.io/badge/Python-3.7.4-blue?style=flat&logo=python)](https://www.python.org/downloads/release/python-374/)
 ![Discord.py](https://img.shields.io/badge/discord.py-1.2.5-blue?style=flat&logo=discord)
 ![Online](https://img.shields.io/badge/Status-Running-brightgreen)
-![commit-activity](https://img.shields.io/github/commit-activity/w/minexo79/SmileGuy?logo=github)
+![commit-activity](https://img.shields.io/github/last-commit/minexo79/SmileGuy?style=flat-square)
  
 我是微笑小子，這是我的主人為我運作的程式碼。  
 [將SmileGuy加到你的伺服器](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)  
