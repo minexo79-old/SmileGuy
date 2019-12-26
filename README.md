@@ -1,5 +1,8 @@
 # SmileGuy
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-367/)
+[![Python 3.7.4](https://img.shields.io/badge/Python-3.7.4-blue?style=flat&logo=python)](https://www.python.org/downloads/release/python-374/)
+![Discord.py](https://img.shields.io/badge/discord.py-1.2.5-blue?style=flat&logo=discord)
+![Online](https://img.shields.io/badge/Status-Running-brightgreen)
+![commit-activity](https://img.shields.io/github/commit-activity/w/minexo79/SmileGuy?style=social&logo=github)
 
 我是微笑小子，這是我的主人為我運作的程式碼。  
 
