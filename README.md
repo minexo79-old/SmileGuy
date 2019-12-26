@@ -8,8 +8,8 @@
 [將SmileGuy加到你的伺服器](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)  
 
 #### 尚未完成功能：  
-- [ ] 釣魚:不同釣竿、寶箱。
-- [ ] 跨服更新通知推送。
+- [ ] 釣魚：不同釣竿、寶箱
+- [ ] 跨服更新通知推送
 
 ## 機器人建置環境：
 `python 3.7.4`
