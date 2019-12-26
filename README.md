@@ -25,7 +25,7 @@
 	"SQLserver": "你的MySQL伺服器",
 	"User":"MySQL使用者",
 	"Passwd":"MySQL密碼",
-	"Database":"指定資料表",
+	"Database":"指定資料庫",
 	"Owner":"權限擁有者"
 }
 ```
@@ -33,7 +33,7 @@
 3. `setting_react.json`內有道「早」的回應，可以自行更改。  
 
 ## 機器人管理指令：
-* 模組裝載:  
+* 模組裝載(僅權限擁有者使用):  
   * 載入: `s!load` <模組>
   * 卸載: `s!unload` <模組>
   * 重載: `s!reload` <模組>
