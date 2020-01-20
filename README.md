@@ -1,7 +1,7 @@
 # SmileGuy 微笑小子
 [![Python 3.7.4](https://img.shields.io/badge/Python-3.7.4-blue?style=flat&logo=python)](https://www.python.org/downloads/release/python-374/)
 ![Discord.py](https://img.shields.io/badge/discord.py-1.2.5-blue?style=flat&logo=discord)
-![Online](https://img.shields.io/badge/Status-Running-brightgreen)  
+![Online](https://img.shields.io/badge/Status-Running-brightgreen)
 ![commit-activity](https://img.shields.io/github/last-commit/minexo79/SmileGuy?style=flat-square)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![issue](https://img.shields.io/bitbucket/issues-raw/minexo79/smileguy?style=social)
