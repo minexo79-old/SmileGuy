@@ -1,9 +1,8 @@
 import discord  # 導入discord
 from discord.ext import commands
-from core.classes import Cog_Extension
+from core.classes import Cog_Extension,embedconfig
 import random
 import asyncio
-import embedconfig
 import MySQLdb
 import json
 
@@ -16,7 +15,8 @@ class fishing(Cog_Extension):
 
     @commands.command() #釣魚
     async def fish(self,ctx,feature:str):
-
+        
+        await ctx.channel.purge(limit=1)
         conn = MySQLdb.connect(
             host=jdata_bot['SQLserver'],
             user=jdata_bot['User'],
@@ -35,10 +35,10 @@ class fishing(Cog_Extension):
             for row in myresult:
                 user_id = row[0]
                 exp = row[1]
-                if int(ctx.message.author.id) == int(user_id): # 有註冊
+                if str(ctx.message.author.id) == str(user_id): # 有註冊
                     nologin = 0;
                     ## Embed
-                    embed = discord.Embed(color=embedconfig.color)
+                    embed = discord.Embed(color=embedconfig.embed_normal)
                     embed.add_field(name='玩家', value=f"{ctx.message.author.mention}\n({user_id})", inline=False)
                     embed.add_field(name='經驗值', value="%s" % (exp), inline=False)
                     embed.set_footer(text=embedconfig.footer)
@@ -58,7 +58,7 @@ class fishing(Cog_Extension):
             myresult = c.fetchall()
             for row in myresult:
                 user_id = row[0]
-                if int(ctx.message.author.id) != int(user_id): # 沒註冊
+                if str(ctx.message.author.id) != str(user_id): # 沒註冊
                     nologin = 0
                 else: # 有註冊 
                     nologin = nologin + 1
@@ -88,7 +88,7 @@ class fishing(Cog_Extension):
                     ## Embed
                     user = ctx.message.author.mention
                     file = discord.File(".//pic//fishing//fish.gif",filename="fish.gif") #調出本地圖片
-                    embed = discord.Embed(color=embedconfig.color)
+                    embed = discord.Embed(color=embedconfig.embed_normal)
                     embed.set_thumbnail(url="attachment://fish.gif") #embed指標
                     embed.add_field(name='釣魚', value=f"{user} 揮了魚竿，\n坐在河邊的石頭等待魚兒的到來。", inline=False)
                     embed.set_footer(text=embedconfig.footer)
@@ -107,7 +107,7 @@ class fishing(Cog_Extension):
                         #Embed
                         file = discord.File(".//pic//fishing//shark.png",filename="shark.png") #調出本地圖片
                         attachment = "attachment://shark.png" #embed指標
-                        embed = discord.Embed(color=embedconfig.color)
+                        embed = discord.Embed(color=embedconfig.embed_normal)
                         embed.set_image(url=attachment)
                         embed.add_field(name='結果', value=f"{user}\n釣到 __**大白鯊**__ !!!\n`經驗值 + 1.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
@@ -141,7 +141,7 @@ class fishing(Cog_Extension):
                         c.execute(sql, val)
                         conn.commit()  
                         #Embed
-                        embed = discord.Embed(color=embedconfig.color)
+                        embed = discord.Embed(color=embedconfig.embed_normal)
                         embed.set_thumbnail(url=attachment)
                         embed.add_field(name='結果', value=f"恭喜{user}\n釣到一隻 __**{random_mes}**__ !!!\n`經驗值 + 1.0`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
@@ -158,7 +158,7 @@ class fishing(Cog_Extension):
                         #Embed
                         file = discord.File(".//pic//fishing//bone.png",filename="bone.png") #調出本地圖片
                         attachment = "attachment://bone.png" #embed指標            
-                        embed = discord.Embed(color=embedconfig.color)
+                        embed = discord.Embed(color=embedconfig.embed_normal)
                         embed.set_thumbnail(url=attachment)
                         embed.add_field(name='結果', value=f"{user}\n釣到了一坨 __**垃圾**__ !!!\n`經驗值 + 0.5`", inline=False)
                         embed.set_footer(text=embedconfig.footer)
@@ -168,7 +168,7 @@ class fishing(Cog_Extension):
 
                     else: #沒釣到
                         ## Embed
-                        embed = discord.Embed(color=embedconfig.color)
+                        embed = discord.Embed(color=embedconfig.embed_normal)
                         embed.add_field(name='結果', value=f"{user}\n甚麼也沒有釣到......", inline=False)
                         embed.set_footer(text=embedconfig.footer)
                         await ctx.send(embed=embed)  
@@ -182,7 +182,11 @@ class fishing(Cog_Extension):
                 await ctx.send("還沒註冊喔~'\n註冊指令:`fish reg`")
                 conn.close()
         else:
-            pass
+            embed = discord.Embed(color=embedconfig.embed_normal)
+            embed.add_field(name="訊息", value="**訊息輸入錯誤**", inline=False)
+            embed.set_footer(text=embedconfig.footer)   
+            await ctx.send(embed=embed)  
+            conn.close()
                 
 def setup(bot):
     bot.add_cog(fishing(bot))       

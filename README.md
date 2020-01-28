@@ -1,13 +1,17 @@
 # SmileGuy 微笑小子
 [![Python 3.7.4](https://img.shields.io/badge/Python-3.7.4-blue?style=flat&logo=python)](https://www.python.org/downloads/release/python-374/)
 ![Discord.py](https://img.shields.io/badge/discord.py-1.2.5-blue?style=flat&logo=discord)
-![Online](https://img.shields.io/badge/Status-Running-brightgreen)  
+![Online](https://img.shields.io/badge/Status-Running-brightgreen)
 ![commit-activity](https://img.shields.io/github/last-commit/minexo79/SmileGuy?style=flat-square)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![issue](https://img.shields.io/bitbucket/issues-raw/minexo79/smileguy?style=social)
 
 我是微笑小子，這是我的主人為我運作的程式碼。  
 [將SmileGuy加到你的伺服器](https://discordapp.com/api/oauth2/authorize?client_id=613249451355799552&permissions=8&scope=bot)  
+
+## 合作夥伴：  
+* 繪師：
+  * 不完備性軍團第二公理指揮部掌權者•腳死大上帝#1996  
 
 #### 尚未完成功能：  
 - [ ] 釣魚：不同釣竿、寶箱
@@ -18,7 +22,7 @@
 `python 3.7.4`
 `discord.py 1.2.5`
 `mysqlclient`
-`一台可以跑的電腦(X`
+`一台可以跑的電腦`
 
 ## 建置步驟：
 1. 將`setting_bot-example.json`改名成`setting_bot.json`並填入以下資料：
