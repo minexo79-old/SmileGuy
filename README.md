@@ -15,8 +15,8 @@
 ---
 
 ## 開發者＆合作夥伴：      
-|(開發者) minexo79|(繪師) Vtuber雙命裂#1716|(繪師) SAIFRIX#1996|
-|:--------------:|:---------------------:|:-----------------:|
+|(開發者) minexo79|(繪師) Vtuber雙命裂#1716|(繪師) SAIFRIX#1996|  
+|:--------------:|:---------------------:|:-----------------:|  
 |[![minexo79](https://avatars0.githubusercontent.com/u/54303621?s=128&v=4)](https://github.com/minexo79)|[![doublemin](https://yt3.ggpht.com/a/AGF-l78DFH5aR25qUjbbwxSAtbPwhMLAxuYK4BJFxg=s128-c-k-c0xffffffff-no-rj-mo)](https://www.youtube.com/channel/UCtKyM4DA8CyCAm5LGsvUsag)|![SAIFRIX](https://cdn.discordapp.com/avatars/484671733987803177/ef4f5dc3e0956fb9bf9fe043b249d467.png?size=128)|
  
 ---
